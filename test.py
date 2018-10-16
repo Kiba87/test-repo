@@ -1,10 +1,23 @@
-import math
+# A simple program illustrating chaotic behaviour
 
-print('The factors of the number you type when prompted will be displayed')
-a = int(input('Type now // '))
-b = 1
-while b <= math.sqrt(a):
-	if a % b == 0:
-		print("A factor of the number is ", b)
-		print("A factor of the number is ", int(a/b))
-	b += 1
+
+def main():
+    print("This program illustrates a chaotic function")
+
+    while True:
+        try:
+            x = float((input("Enter a number between 0 and 1: ")))
+            if (0 < x and x < 1):
+                break
+            else:
+                print("Please enter correct number")
+        except Exception as e:
+            print("Please enter correct number")
+
+    for i in range(10):
+        x = 3.9 * x * (1-x)
+        print(x)
+
+
+if __name__ == '__main__':
+    main()
